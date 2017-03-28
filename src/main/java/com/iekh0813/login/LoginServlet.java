@@ -1,9 +1,5 @@
 package com.iekh0813.login;
 
-import com.iekh0813.todo.TodoService;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,10 +10,12 @@ import java.util.Date;
 
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
-    ApplicationContext context = new ClassPathXmlApplicationContext("all_context.xml");
-    public LoginService loginService = (LoginService) context.getBean("loginService");
-    public TodoService todoService = (TodoService) context.getBean("todoService");
-    //private LoginService loginService = new LoginService();
+    /*
+        ApplicationContext context = new ClassPathXmlApplicationContext("all_context.xml");
+        public LoginService loginService = (LoginService) context.getBean("loginService");
+        public TodoService todoService = (TodoService) context.getBean("todoService");
+    */
+    private LoginService loginService = new LoginService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

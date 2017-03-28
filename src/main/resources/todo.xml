@@ -7,7 +7,7 @@
         <constructor-arg value="name" index="0" type="java.lang.String" />
     </bean-->
 
-    <bean id="todoService" class="com.iekh0813.todo.TodoService" scope="singleton">
+    <!--bean id="todoService" class="com.iekh0813.todo.TodoService" scope="singleton">
         <constructor-arg name="todos">
             <list>
                 <bean class="com.iekh0813.todo.Todo">
@@ -21,6 +21,6 @@
                 </bean>
             </list>
         </constructor-arg>
-    </bean>
+    </bean-->
 
 </beans>

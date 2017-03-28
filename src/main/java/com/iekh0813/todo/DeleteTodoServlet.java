@@ -1,8 +1,5 @@
 package com.iekh0813.todo;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,8 +9,10 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/delete-todo.do")
 public class DeleteTodoServlet extends HttpServlet {
-    ApplicationContext context = new ClassPathXmlApplicationContext("all_context.xml");
-    public TodoService todoService = (TodoService) context.getBean("todoService");
+    /*    ApplicationContext context = new ClassPathXmlApplicationContext("all_context.xml");
+        public TodoService todoService = (TodoService) context.getBean("todoService");
+    */
+    private TodoService todoService = new TodoService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
