@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: iekh0813
-  Date: 27.03.2017
-  Time: 20:48
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -13,7 +7,12 @@
 
 <body>
 <p>Your Todo's are:</p>
-<p>${todos}</p>
+
+<ol>
+    <c:forEach items="${todos}" var="todo">
+        <li>${todo.name}</li>
+    </c:forEach>
+</ol>
 
 </body>
 </html>
