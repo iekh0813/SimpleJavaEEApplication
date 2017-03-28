@@ -36,6 +36,10 @@
 
 <div class="container">
 
+    <div class="alert alert-danger" role="alert">
+        <div class="text-center">${errorMessage}</div>
+    </div>
+
     <div class="panel panel-default">
         <div class="panel-body">
             <form class="form-horizontal" action="/login.do" method="post">

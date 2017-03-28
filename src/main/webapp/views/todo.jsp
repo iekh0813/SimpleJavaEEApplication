@@ -20,12 +20,12 @@
 <body>
 <nav class="navbar navbar-default">
 
-    <a href="/" class="navbar-brand">Brand</a>
+    <a href="/" class="navbar-brand">Java EE Application</a>
 
     <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
         <li><a href="/todo.do">Todos</a></li>
-        <li><a href="http://www.in28minutes.com">In28Minutes</a></li>
+        <li><a href="http://www.google.com">Google</a></li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
@@ -35,19 +35,29 @@
 </nav>
 
 <div class="container">
-    <p>Welcome ${name}</p>
-    <p>Your Todo's are:</p>
 
-    <ol>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Todo</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
         <c:forEach items="${todos}" var="todo">
-            <li>${todo.name} &nbsp; &nbsp; <a href="/delete-todo.do?todo=${todo.name}">Delete</a></li>
+            <tr>
+                <td>${todo.name}</td>
+                <td><a href="/delete-todo.do?todo=${todo.name}">Delete</a></td>
+            </tr>
         </c:forEach>
-    </ol>
+        </tbody>
+    </table>
 
     <form action="/add-todo.do" method="post">
         <input type="text" name="todo"/>
-        <input type="submit" value="Add"/>
+        <button type="submit" class="btn btn-primary">Add</button>
     </form>
+
 </div>
 
 <footer class="footer">
