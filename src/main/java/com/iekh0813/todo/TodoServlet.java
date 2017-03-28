@@ -1,6 +1,8 @@
 package com.iekh0813.todo;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +13,9 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/todo.do")
 public class TodoServlet extends HttpServlet {
-    private TodoService todoService = new TodoService();
+    ApplicationContext context = new ClassPathXmlApplicationContext("all_context.xml");
+    private TodoService todoService = (TodoService) context.getBean("todoService");
+    //private TodoService todoService = new TodoService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

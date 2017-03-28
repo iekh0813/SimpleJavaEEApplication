@@ -1,5 +1,8 @@
 package com.iekh0813.login;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,7 +12,9 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
-    private LoginService loginService = new LoginService();
+    ApplicationContext context = new ClassPathXmlApplicationContext("all_context.xml");
+    private LoginService loginService = (LoginService) context.getBean("loginService");
+    //private LoginService loginService = new LoginService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -23,11 +28,6 @@ public class LoginServlet extends HttpServlet {
         boolean isUserValid = loginService.isUserValid(name, password);
 
         if (isUserValid) {
-/*
-            request.setAttribute("name", name);
-            request.setAttribute("todos", todoService.retrieveTodos());
-            request.getRequestDispatcher("/views/welcome.jsp").forward(request, response);
-*/
             request.getSession().setAttribute("name", name);
             response.sendRedirect("/todo.do");
         } else {
