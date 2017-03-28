@@ -1,4 +1,4 @@
-<%@ page import="java.util.Date" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: iekh0813
   Date: 27.03.2017
@@ -8,15 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Welcome</title>
+    <title>Todo</title>
 </head>
-<%
-    Date date = new Date();
-%>
+
 <body>
-<p>Welcome ${name}</p>
-<p>Logged at: <%=date%>
-</p>
 <p>Your Todo's are:</p>
 <p>${todos}</p>
 
