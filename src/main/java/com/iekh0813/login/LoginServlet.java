@@ -1,5 +1,6 @@
 package com.iekh0813.login;
 
+import com.iekh0813.todo.TodoService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -9,11 +10,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Date;
 
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
     ApplicationContext context = new ClassPathXmlApplicationContext("all_context.xml");
-    private LoginService loginService = (LoginService) context.getBean("loginService");
+    public LoginService loginService = (LoginService) context.getBean("loginService");
+    public TodoService todoService = (TodoService) context.getBean("todoService");
     //private LoginService loginService = new LoginService();
 
     @Override
@@ -29,6 +32,7 @@ public class LoginServlet extends HttpServlet {
 
         if (isUserValid) {
             request.getSession().setAttribute("name", name);
+            request.getSession().setAttribute("loginDate", new Date());
             response.sendRedirect("/todo.do");
         } else {
             request.setAttribute("errorMessage", "Invalid credentials!!");

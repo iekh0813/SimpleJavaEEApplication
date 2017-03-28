@@ -4,7 +4,7 @@
 <head>
     <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Todo's</title>
+    <title>Todo's page</title>
 
     <style>
         .footer {
@@ -29,7 +29,7 @@
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-        <li><a href="/login.do">Login</a></li>
+        <li><a href="/logout.do">Logout</a></li>
     </ul>
 
 </nav>
@@ -44,14 +44,15 @@
         </c:forEach>
     </ol>
 
-    <form action="/todo.do" method="post">
+    <form action="/add-todo.do" method="post">
         <input type="text" name="todo"/>
         <input type="submit" value="Add"/>
     </form>
 </div>
 
 <footer class="footer">
-    <p>footer content</p>
+    <div>Welcome <strong>${name}</strong></div>
+    <div>Logged at ${loginDate}</div>
 </footer>
 
 <script scr="webjars/jquery/3.2.0/jquery.min.js"></script>
