@@ -15,4 +15,14 @@ public class TodoService {
     public List<Todo> retrieveTodos() {
         return todos;
     }
+
+    public void addTodo(Todo todo) {
+        if (!todos.contains(todo)) {
+            todos.add(todo);
+        }
+    }
+
+    public void deleteTodo(Todo todo) {
+        todos.remove(todo);
+    }
 }
