@@ -9,9 +9,9 @@ public class TodoService {
     private static List<Todo> todos = new ArrayList<>();
 
     static {
-        todos.add(new Todo("Learn Web Application Development"));
-        todos.add(new Todo("Learn Spring MVC"));
-        todos.add(new Todo("Learn Spring Rest Services"));
+        todos.add(new Todo("Learn Web Application Development", "Study"));
+        todos.add(new Todo("Learn Spring MVC", "Study"));
+        todos.add(new Todo("Learn Spring Rest Services", "Study"));
     }
 
 /*
@@ -28,11 +28,11 @@ public class TodoService {
         TodoService.todos = todos;
     }
 
-    public List<Todo> retrieveTodos() {
+    List<Todo> retrieveTodos() {
         return todos;
     }
 
-    public void addTodo(Todo todo) {
+    void addTodo(Todo todo) {
         //System.out.println("addTodo before:" + todos.size());
         if (!todos.contains(todo)) {
             todos.add(todo);
@@ -40,7 +40,7 @@ public class TodoService {
         }
     }
 
-    public void deleteTodo(Todo todo) {
+    void deleteTodo(Todo todo) {
         //System.out.println("deleteTodo before:" + todos.size());
         todos.remove(todo);
         //System.out.println("deleteTodo after:" + todos.size());

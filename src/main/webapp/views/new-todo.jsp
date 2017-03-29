@@ -3,34 +3,29 @@
 
 <div class="container">
 
-    <div class="alert alert-danger" role="alert">
-        <div class="text-center">${errorMessage}</div>
-    </div>
-
     <div class="panel panel-default">
         <div class="panel-body">
-            <form class="form-horizontal" action="/login.do" method="post">
+            <form class="form-horizontal" action="/add-todo.do" method="post">
                 <div class="form-group">
-                    <label for="name" class="col-sm-2 control-label">Name</label>
+                    <label for="todo" class="col-sm-2 control-label">Description</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" id="name" name="name">
+                        <input type="text" class="form-control" id="todo" name="todo">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="password" class="col-sm-2 control-label">Password</label>
+                    <label for="category" class="col-sm-2 control-label">Category</label>
                     <div class="col-sm-8">
-                        <input type="password" class="form-control" id="password" name="password">
+                        <input type="text" class="form-control" id="category" name="category">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-success">Login</button>
+                        <button type="submit" class="btn btn-success">Add</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
-
 </div>
 
 <%@include file="common/footer.jspf" %>
