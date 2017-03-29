@@ -1,4 +1,4 @@
-package com.iekh0813.login;
+package com.iekh0813.webapplication.login;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String name = request.getParameter("name");
         String password = request.getParameter("password");
-        boolean isUserValid = loginService.isUserValid(name, password);
+        boolean isUserValid = loginService.isUserValid(name, password.hashCode());
 
         if (isUserValid) {
             request.getSession().setAttribute("name", name);

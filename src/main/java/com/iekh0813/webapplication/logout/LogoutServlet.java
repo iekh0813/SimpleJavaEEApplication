@@ -1,4 +1,4 @@
-package com.iekh0813.logout;
+package com.iekh0813.webapplication.logout;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
