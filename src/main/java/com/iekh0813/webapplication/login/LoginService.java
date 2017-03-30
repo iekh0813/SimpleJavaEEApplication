@@ -1,9 +1,10 @@
 package com.iekh0813.webapplication.login;
 
-import com.iekh0813.dao.UserDAO;
+import com.iekh0813.webapplication.dao.UserDAO;
+import org.springframework.stereotype.Component;
 
+@Component
 public class LoginService {
-    String password;
 
     public LoginService() {
     }

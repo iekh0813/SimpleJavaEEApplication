@@ -4,13 +4,13 @@
 
     <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="/list-todo.do">Todos</a></li>
-        <li><a href="/add-todo.do">Add Todo</a></li>
+        <li><a href="${pageContext.request.contextPath}/list-todo.do">Todos</a></li>
+        <li><a href="${pageContext.request.contextPath}/add-todo.do">Add Todo</a></li>
         <li><a href="http://www.google.com">Google</a></li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-        <li><a href="/logout.do">Logout</a></li>
+        <li><a href="${pageContext.request.contextPath}/logout.do">Logout</a></li>
     </ul>
 
 </nav>

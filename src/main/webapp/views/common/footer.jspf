@@ -1,6 +1,7 @@
 <footer class="footer">
     <div>Welcome <strong>${name}</strong></div>
     <div>Logged at ${loginDate}</div>
+    - contextPath = ${pageContext.request.contextPath}
 </footer>
 
 <script scr="webjars/jquery/3.2.0/jquery.min.js"></script>

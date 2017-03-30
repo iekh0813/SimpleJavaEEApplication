@@ -18,17 +18,20 @@ public class AddTodoServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        System.out.println("AddTodoServlet: " + todoService);
+        System.out.println("AddTodoServlet: doPost");
+        System.out.println("AddTodoServlet: request.getContextPath() = " + request.getContextPath());
         String newTodo = request.getParameter("todo");
         String categoryTodo = request.getParameter("category");
         if (StringUtils.isNotEmpty(newTodo)) {
             todoService.addTodo(new Todo(newTodo, categoryTodo));
         }
-        response.sendRedirect("/list-todo.do");
+        System.out.println("AddTodoServlet: request.getContextPath() = " + request.getContextPath());
+        response.sendRedirect(request.getContextPath() + "/list-todo.do");
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        System.out.println("AddTodoServlet: doGet");
         request.getRequestDispatcher("/views/new-todo.jsp").forward(request, response);
     }
 }

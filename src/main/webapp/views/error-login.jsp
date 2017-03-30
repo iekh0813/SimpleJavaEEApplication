@@ -3,13 +3,15 @@
 
 <div class="container">
 
+    <% System.out.println("error-login.jsp"); %>
+
     <div class="alert alert-danger" role="alert">
         <div class="text-center">${errorMessage}</div>
     </div>
 
     <div class="panel panel-default">
         <div class="panel-body">
-            <form class="form-horizontal" action="/login.do" method="post">
+            <form class="form-horizontal" action="${pageContext.request.contextPath}/login.do" method="post">
                 <div class="form-group">
                     <label for="name" class="col-sm-2 control-label">Name</label>
                     <div class="col-sm-8">

@@ -3,9 +3,11 @@
 
 <div class="container">
 
+    <% System.out.println("new-todo.jsp"); %>
+
     <div class="panel panel-default">
         <div class="panel-body">
-            <form class="form-horizontal" action="/add-todo.do" method="post">
+            <form class="form-horizontal" action="${pageContext.request.contextPath}/add-todo.do" method="post">
                 <div class="form-group">
                     <label for="todo" class="col-sm-2 control-label">Description</label>
                     <div class="col-sm-8">

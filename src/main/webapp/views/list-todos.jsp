@@ -3,6 +3,8 @@
 
 <div class="container">
 
+    <% System.out.println("list-todos.jsp"); %>
+
     <table class="table table-hover">
         <thead>
         <tr>
@@ -16,7 +18,9 @@
             <tr>
                 <td>${todo.name}</td>
                 <td>${todo.category}</td>
-                <td><a href="/delete-todo.do?todo=${todo.name}&category=${todo.category}">Delete</a></td>
+                <td>
+                    <a href="${pageContext.request.contextPath}/delete-todo.do?todo=${todo.name}&category=${todo.category}">Delete</a>
+                </td>
             </tr>
         </c:forEach>
         </tbody>
