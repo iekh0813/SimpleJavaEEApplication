@@ -1,4 +1,4 @@
-package com.iekh0813.webapplication.todo;
+package com.iekh0813.jee.todo;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -32,6 +32,6 @@ public class AddTodoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         System.out.println("AddTodoServlet: doGet");
-        request.getRequestDispatcher("/views/new-todo.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/new-todo.jsp").forward(request, response);
     }
 }

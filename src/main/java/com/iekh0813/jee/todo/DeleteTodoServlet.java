@@ -1,4 +1,4 @@
-package com.iekh0813.webapplication.todo;
+package com.iekh0813.jee.todo;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

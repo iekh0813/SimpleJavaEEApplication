@@ -1,4 +1,4 @@
-package com.iekh0813.webapplication.todo;
+package com.iekh0813.jee.todo;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,6 +18,6 @@ public class ListTodoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         System.out.println("ListTodoServlet: doGet");
         request.setAttribute("todos", todoService.retrieveTodos());
-        request.getRequestDispatcher("/views/list-todos.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/list-todos.jsp").forward(request, response);
     }
 }

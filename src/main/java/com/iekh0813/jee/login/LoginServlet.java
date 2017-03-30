@@ -1,4 +1,4 @@
-package com.iekh0813.webapplication.login;
+package com.iekh0813.jee.login;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -23,7 +23,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         System.out.println("LoginServlet: doGet");
-        request.getRequestDispatcher("/views/login.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/list-todo.do");
         } else {
             request.setAttribute("errorMessage", "Invalid credentials!!");
-            request.getRequestDispatcher("/views/error-login.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/error-login.jsp").forward(request, response);
         }
     }
 }

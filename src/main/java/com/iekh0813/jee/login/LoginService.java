@@ -1,6 +1,6 @@
-package com.iekh0813.webapplication.login;
+package com.iekh0813.jee.login;
 
-import com.iekh0813.webapplication.dao.UserDAO;
+import com.iekh0813.jee.dao.UserDAO;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,4 +1,4 @@
-package com.iekh0813.webapplication.todo;
+package com.iekh0813.jee.todo;
 
 public class Todo {
     private String name;
