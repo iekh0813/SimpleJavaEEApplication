@@ -1,6 +1,5 @@
 package com.iekh0813.jee.dao;
 
-
 import com.iekh0813.nc.framework.SQLHelper;
 
 public class UserDAO {

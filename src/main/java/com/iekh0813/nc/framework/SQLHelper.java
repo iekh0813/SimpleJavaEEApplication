@@ -1,10 +1,13 @@
 package com.iekh0813.nc.framework;
 
+import org.apache.log4j.Logger;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.sql.*;
 
 public class SQLHelper {
+    static final Logger logger = Logger.getLogger(SQLHelper.class);
 
     public static Connection getConnection() {
         return SQLConnectionHelper.getInstance().getConnection();
@@ -14,22 +17,19 @@ public class SQLHelper {
         try {
             if (rs != null) rs.close();
         } catch (SQLException e) {
-            System.out.println("failed to close SQL ResultSet");
-            System.out.println(e);
+            logger.error("failed to close SQL ResultSet", e);
         }
 
         try {
             if (stmt != null) stmt.close();
         } catch (SQLException e) {
-            System.out.println("failed to close SQL Statement");
-            System.out.println(e);
+            logger.error("failed to close SQL Statement", e);
         }
 
         try {
             if (conn != null) conn.close();
         } catch (SQLException e) {
-            System.out.println("failed to close SQL Connection");
-            System.out.println(e);
+            logger.error("failed to close SQL Connection", e);
         }
     }
 
@@ -64,8 +64,7 @@ public class SQLHelper {
             rs = stmt.executeQuery();
             return rs.next() ? rs.getString(1) : null;
         } catch (SQLException e) {
-            System.out.println("failed to execute query\n" + query);
-            System.out.println(e);
+            logger.error("failed to execute query\n" + query, e);
             throw new RuntimeException(e);
         } finally {
             cleanUp(conn, stmt, rs);

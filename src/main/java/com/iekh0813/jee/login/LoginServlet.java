@@ -1,6 +1,7 @@
 package com.iekh0813.jee.login;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +12,7 @@ import java.io.IOException;
 import java.util.Date;
 
 @WebServlet(urlPatterns = "/login.do")
+@Controller
 public class LoginServlet extends HttpServlet {
     /*
         ApplicationContext context = new ClassPathXmlApplicationContext("all_context.xml");
@@ -18,7 +20,9 @@ public class LoginServlet extends HttpServlet {
         public TodoService todoService = (TodoService) context.getBean("todoService");
     */
     @Autowired
-    private LoginService loginService = new LoginService();
+    private LoginService loginService;
+
+    //private LoginService loginService = new LoginService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

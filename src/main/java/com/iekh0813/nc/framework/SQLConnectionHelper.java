@@ -1,12 +1,16 @@
 package com.iekh0813.nc.framework;
 
 
+import org.apache.log4j.Logger;
+
 import javax.ejb.EJBException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class SQLConnectionHelper {
+    static final Logger logger = Logger.getLogger(SQLHelper.class);
+
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost:3306/todo_service";
     static final String USER = "root";
@@ -35,7 +39,7 @@ public class SQLConnectionHelper {
             Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
             return connection;
         } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
+            logger.error("couldn't get a connection", e);
             throw new RuntimeException(e);
         }
     }

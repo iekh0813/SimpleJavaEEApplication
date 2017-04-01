@@ -16,10 +16,16 @@ public class AddTodoServlet extends HttpServlet {
     */
     private TodoService todoService = new TodoService();
 
+/*
+    @Autowired
+    TodoService todoService;
+*/
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         System.out.println("AddTodoServlet: doPost");
         System.out.println("AddTodoServlet: request.getContextPath() = " + request.getContextPath());
+        System.out.println("AddTodoServlet: todoService: " + todoService);
         String newTodo = request.getParameter("todo");
         String categoryTodo = request.getParameter("category");
         if (StringUtils.isNotEmpty(newTodo)) {
